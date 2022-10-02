@@ -25,8 +25,8 @@ namespace tmr {
 			className,
 			title.c_str(),
 			WS_OVERLAPPEDWINDOW,
-			CW_USEDEFAULT, //TODO: center
-			CW_USEDEFAULT, //TODO: center
+			CW_USEDEFAULT,
+			CW_USEDEFAULT,
 			size.x,
 			size.y,
 			0,
