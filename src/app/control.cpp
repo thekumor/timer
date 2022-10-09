@@ -7,6 +7,16 @@ namespace tmr {
 	{
 	}
 
+	EventReceiver* Control::GetReceiver()
+	{
+		return &m_Receiver;
+	}
+
+	const std::wstring& Control::GetText()
+	{
+		return m_Text;
+	}
+
 	HWND Control::GetHandle()
 	{
 		return m_Handle;
@@ -26,6 +36,12 @@ namespace tmr {
 	{
 		m_Position = position;
 		SetWindowPos(m_Handle, 0, position.x, position.y, 0, 0, SWP_NOSIZE | SWP_NOZORDER); // SWP_NOACTIVATE
+	}
+
+	void Control::SetText(const std::wstring& text)
+	{
+		m_Text = text;
+		SetWindowText(m_Handle, text.c_str());
 	}
 
 	void Control::Center()

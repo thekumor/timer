@@ -19,6 +19,8 @@ namespace tmr {
 			0
 		);
 		GetWinAPIError();
+
+		m_Receiver.SetHandle(m_Handle);
 	}
 
 }

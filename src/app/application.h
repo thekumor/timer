@@ -6,6 +6,7 @@
 #include "button.h"
 #include "font.h"
 #include "static.h"
+#include "global.h"
 #include <string>
 #include <windows.h>
 #include <vector>
@@ -17,15 +18,16 @@ namespace tmr {
 	{
 	public:
 		Application(HINSTANCE instance);
-		
+
 		void InitWindow(const Vec2u& size, const std::wstring& title);
 		void Run();
 		template <typename T>
-		std::shared_ptr<Control>& AddControl(const T& control, Font& font);
+		T* AddControl(const Vec2u& size, const Vec2u& position, const std::wstring& text,
+											 HINSTANCE instance, Control* parent, Font& font);
 
 	private:
 		Window m_Window = {};
-		std::vector<std::shared_ptr<Control>> m_Controls = {};
+		std::vector<Control> m_Controls = {};
 		HINSTANCE m_Instance = 0;
 	};
 
